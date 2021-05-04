@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import CommentList from '../Components/CommentList';
+import AddComment from '../Components/AddComment';
 
 export default class CommentArea extends Component {
   render() {
@@ -17,8 +18,10 @@ export default class CommentArea extends Component {
                 src={this.props.item.img}
                 alt=""
               />
-              <CommentList asin={this.props.item.asin} />
-              {/* <AddComment/> */}
+              <div className="d-flex flex-column p-100">
+                <CommentList asin={this.props.item.asin} />
+                <AddComment asin={this.props.item.asin} />
+              </div>
             </div>
             <button onClick={() => this.props.deselectBook()}>close</button>
           </div>
